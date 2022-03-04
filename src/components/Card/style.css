@@ -1,0 +1,15 @@
+.Card__Nota {
+    padding: 0.7rem;
+    background-color: #ebe7e7;
+    border-radius: 5px;
+    width: 230px;
+}
+
+.Card__Titulo{
+    font-weight: 400;
+}
+
+.Card__paragraph{
+    margin-top: 0.2rem;
+    font-size: 12px;
+}
