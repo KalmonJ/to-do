@@ -10,7 +10,7 @@ export default class ListaDeCards extends Component {
                 {this.props.NewNote.map((notes, index) => {
                     return (
                         <li className="list__item" key={index}>
-                            <Card title = {notes.title} text= {notes.text} />
+                            <Card title = {notes.title} text= {notes.text} delete ={this.props.DeleteNote} indice = {index} />
                         </li>
                     )
                 })}

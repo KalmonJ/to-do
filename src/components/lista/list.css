@@ -5,6 +5,8 @@
     flex-wrap: wrap;
     border: 1px solid gray;
     width: 100%;
+    height: calc(100vh - 43px);
+    border-top: unset;
 }
 
 .list__item{
