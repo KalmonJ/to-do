@@ -3,20 +3,36 @@ import "./style.css"
 
 class ListC extends Component {
 
+    constructor() {
+        super()
+        this.state = {category:[]}
+    }
+
+    componentDidMount() {
+        this.props.category.register(this._newCategory.bind(this));
+    }
+
+    _newCategory(category) {
+        this.setState({...this.state, category})
+    }
+
     addCategory(e) {
         if (e.key === "Enter") {
-            console.log("Adicionar categoria");
+            this.props.addCategory(e.target.value);
         }
     }
 
     render() {
-        return(
+        return (
             <section className="container__categories">
+
                 <ul className="list__categories">
-                    <li className="list__categories--item">Categoria</li>
-                    <li className="list__categories--item">Categoria</li>
-                    <li className="list__categories--item">Categoria</li>
-                    <li className="list__categories--item">Categoria</li>
+                    {this.state.category.map((element, index) => {
+                        return (
+                            <li key={index} className="list__categories--item">{element}</li>
+                        )
+                    })}
+                    
                 </ul>
                 <input type="text" name="categoryes" className="Input" placeholder="Adicionar categoria" onKeyDown={this.addCategory.bind(this)} />
             </section>
